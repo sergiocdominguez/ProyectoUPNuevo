@@ -1,0 +1,24 @@
+extends ../layout.jade
+block contenido
+
+    div(class="container remove-float center-block big-top-space")
+        h1 Listado de Lineas
+        a(href="/api/lineas/new", class="right-space") Nueva Linea
+        p
+        for linea in lineas 
+            .white.border.tr.large-padding
+                .row
+                    .col-md-8
+                        p Id: #{linea._id}
+                        p Jugador 1: #{linea.id_jugador1.nombre} #{linea.id_jugador1.apellido} (#{linea.id_jugador1.handicap})
+                        p Jugador 2: #{linea.id_jugador2.nombre} #{linea.id_jugador2.apellido} (#{linea.id_jugador2.handicap})
+                        p Jugador 3: #{linea.id_jugador3.nombre} #{linea.id_jugador3.apellido} (#{linea.id_jugador3.handicap})
+                        p Jugador 4: #{linea.id_jugador4.nombre} #{linea.id_jugador4.apellido} (#{linea.id_jugador4.handicap})
+                    .col.md-2
+                        
+                        a(href="/api/lineas/#{linea._id}", class="right-space") Ver
+                        a(href="/api/lineas/#{linea._id}/editar", class="right-space") Editar
+                        form(action="/api/lineas/#{linea._id}" class="link" method="POST")
+                            input(type="hidden", name="_method", value="delete")
+                            input(type="submit", value="Eliminar", onclick="return confirm('Esta seguro de eliminar el registro?');")
+                        

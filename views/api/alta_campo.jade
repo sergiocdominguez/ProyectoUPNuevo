@@ -1,0 +1,21 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-8 remove-float center-block big-top-space")
+        h1 Alta Campo
+        form(action="/api/campos", method="POST")
+            div(class="form-group")
+            div
+                label(for="nombre")  Nombre
+                input(type="text", name="nombre", id="nombre", placeholder="Nombre", class="form-control")
+            div
+                label(for="ubicacion")  Ubicacion
+                input(type="text", name="ubicacion", id="ubicacion", placeholder="Ubicacion", class="form-control")
+            div
+                label(for="coordenadas") Coordenadas
+                input(type="text", name="lat", id="lat", placeholder="Latitud", class="form-control")
+                input(type="text", name="long", id="long", placeholder="Longitud", class="form-control")
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta campo", class="btn btn-info")

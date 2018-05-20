@@ -1,0 +1,22 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Editar campo #{campo.nombre}
+        form(action="/api/campos/#{campo._id}", method="POST")
+            <input type="hidden" name="_method" value="put"/>
+            div(class="form-group")
+            div
+                label(for="nombre")  Nombre
+                input(type="text",name="nombre", id="nombre",value="#{campo.nombre}",class="form-control")
+            div
+                label(for="ubicacion")  Ubicacion
+                input(type="text",name="ubicacion", id="ubicacion",value="#{campo.ubicacion}",class="form-control")
+            div
+                label(for="coordenadas")  Coordenadas
+                input(type="text",name="lat", id="lat",value="#{campo.coordenadas[0]}",class="form-control")
+                input(type="text",name="long", id="long",value="#{campo.coordenadas[1]}",class="form-control")
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Editar campo",class="btn btn-info")

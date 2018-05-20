@@ -1,0 +1,18 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-8 remove-float center-block big-top-space")
+        h1 Alta Linea
+        form(action="/api/lineas", method="POST")
+
+            div
+                div(class="selectBox" )
+                    //onclick="showCheckboxes()"
+
+                    label(for="lista") Jugadores
+                    select(id="lista", name="Lista", class="form-control" multiple)
+                        for jugador in jugadores
+                            option(value="#{jugador._id}") #{jugador.nombre} #{jugador.apellido} (#{jugador.handicap})
+
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta linea", class="btn btn-info")

@@ -1,0 +1,36 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-8 remove-float center-block big-top-space")
+        h1 Alta Torneo
+        form(action="/api/torneos", method="POST")
+            div(class="form-group")
+            div
+                label(for="fecha")  Fecha
+                input(type="date", name="fecha", id="fecha", placeholder="Fecha", class="form-control")
+            div
+                label(for="campo")  Campo
+                select(id="campo", name="campo", class="form-control")
+                    option
+                    for campo in campos 
+                        option(value="#{campo._id}") #{campo.nombre} #{campo.ubicacion}
+            div
+                label(for="linea") Linea
+                select(id="linea", name="linea", class="form-control")
+                    option
+                    for linea in lineas 
+                        option(value="#{linea._id}") 
+                            p #{linea.id_jugador1.nombre} #{linea.id_jugador1.apellido} (#{linea.id_jugador1.handicap}); 
+                            p #{linea.id_jugador2.nombre} #{linea.id_jugador2.apellido} (#{linea.id_jugador2.handicap}); 
+                            p #{linea.id_jugador3.nombre} #{linea.id_jugador3.apellido} (#{linea.id_jugador3.handicap});  
+                            p #{linea.id_jugador4.nombre} #{linea.id_jugador4.apellido} (#{linea.id_jugador4.handicap}) 
+            div
+                label(for="horario") Horario
+                select(id="horario", name="horario", class="form-control")
+                    option
+                    for horario in horarios 
+                        option(value="#{horario._id}") #{horario.descripcion}
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta torneo", class="btn btn-info")

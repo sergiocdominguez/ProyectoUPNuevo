@@ -1,0 +1,24 @@
+extends ../layout.jade
+block contenido
+
+    div(class="container remove-float center-block big-top-space")
+        h1 Listado de Jugadores 
+        a(href="/api/jugadores/new", class="right-space") Nuevo Jugador
+        p
+        for jugador in jugadores 
+            .white.border.tr.large-padding
+                .row
+                    .col-md-8
+                        p Id: #{jugador._id}
+                        p Nombre: #{jugador.nombre}
+                        p Apellido: #{jugador.apellido}
+                        p Email: #{jugador.email}
+                        p Edad: #{jugador.edad}
+                        p Handicap: #{jugador.handicap}
+                    .col.md-2
+                        
+                        a(href="/api/jugadores/#{jugador._id}", class="right-space") Ver
+                        a(href="/api/jugadores/#{jugador._id}/editar", class="right-space") Editar
+                        form(action="/api/jugadores/#{jugador._id}" class="link" method="POST")
+                            input(type="hidden", name="_method", value="delete")
+                            input(type="submit", value="Eliminar", onclick="return confirm('Esta seguro de eliminar el registro?');")

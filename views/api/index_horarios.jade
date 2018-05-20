@@ -1,0 +1,17 @@
+extends ../layout.jade
+block contenido
+    div(class="container remove-float center-block big-top-space")
+        h1 Listado de Horarios
+        a(href="/api/horarios/new", class="right-space") Nuevo Horario
+        p
+        for horario in horarios 
+            .white.border.tr.large-padding
+                .row
+                    .col-md-8
+                        p Id: #{horario._id}
+                        p Descripcion: #{horario.descripcion}
+                    .col-md.2
+
+                    form(action="/api/horarios/#{horario._id}" class="link" method="POST")
+                            input(type="hidden", name="_method", value="delete")
+                            input(type="submit", value="Eliminar", onclick="return confirm('Esta seguro de eliminar el registro?');")

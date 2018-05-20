@@ -1,0 +1,14 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-8 remove-float center-block big-top-space")
+        h1 Alta Horario
+        form(action="/api/horarios", method="POST")
+            div(class="form-group")
+            div
+                label(for="descripcion")  Descripcion
+                input(type="text", name="descripcion", id="descripcion", placeholder="Descripcion", class="form-control")
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta Horario", class="btn btn-info")

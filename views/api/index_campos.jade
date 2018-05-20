@@ -1,0 +1,21 @@
+extends ../layout.jade
+block contenido
+    div(class="container remove-float center-block big-top-space")
+        h1 Listado de Campos
+        a(href="/api/campos/new", class="right-space") Nuevo Campo
+        p
+        for campo in campos 
+            .white.border.tr.large-padding
+                .row
+                    .col-md-8
+                        p Id: #{campo._id}
+                        p Nombre: #{campo.nombre}
+                        p Ubicacion: #{campo.ubicacion}
+                        p Coordenadas: #{campo.coordenadas}
+                    .col.md-2
+
+                        a(href="/api/campos/#{campo._id}", class="right-space") Ver
+                        a(href="/api/campos/#{campo._id}/editar", class="right-space") Editar
+                        form(action="/api/campos/#{campo._id}" class="link" method="POST")
+                            input(type="hidden", name="_method", value="delete")
+                            input(type="submit", value="Eliminar", onclick="return confirm('Esta seguro de eliminar el registro?');")

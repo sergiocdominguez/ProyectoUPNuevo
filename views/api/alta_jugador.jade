@@ -1,0 +1,26 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-8 remove-float center-block big-top-space")
+        h1 Alta Jugador
+        form(action="/api/jugadores", method="POST")
+            div(class="form-group")
+            div
+                label(for="nombre")  Nombre
+                input(type="text", name="nombre", id="nombre", placeholder="Nombre", class="form-control")
+            div
+                label(for="apellido")  Apellido
+                input(type="text", name="apellido", id="apellido", placeholder="Apellido", class="form-control")
+            div
+                label(for="email")  Email
+                input(type="text", name="email", id="email", placeholder="Email", class="form-control")
+            div
+                label(for="edad")  Edad
+                input(type="text", name="edad", id="edad", placeholder="Edad", class="form-control")
+            div
+                label(for="handicap")  Handicap
+                input(type="text", name="handicap", id="handicap", placeholder="Handicap", class="form-control")
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit", value="Alta Jugador", class="btn btn-info")

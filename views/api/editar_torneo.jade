@@ -1,0 +1,47 @@
+extends ../layout.jade
+block contenido
+    div(class="col-md-6 remove-float center-block big-top-space")
+        h1 Editar torneo
+        form(action="/api/torneos/#{torneo._id}", method="POST")
+            <input type="hidden" name="_method" value="put"/>
+            div(class="form-group")
+            div
+                label(for="fecha")  Fecha
+                input(type="date", name="fecha", id="fecha", value="#{torneo.fecha}", class="form-control")
+            div
+                label(for="campo")  Campo
+                select(id="campo", name="campo", class="form-control")
+                    for campo in campos 
+                        if (campo._id+""==torneo.campo._id+"")
+                            option(selected value="#{campo._id}") #{campo.nombre} #{campo.ubicacion}
+                        else
+                            option(value="#{campo._id}") #{campo.nombre} #{campo.ubicacion}
+            div
+                label(for="linea") Linea
+                select(id="linea", name="linea", class="form-control")
+                    for linea in lineas 
+                        if (linea._id+""==torneo.linea._id+"")
+                            option(selected value="#{linea._id}") 
+                                p #{linea.id_jugador1.nombre} #{linea.id_jugador1.apellido} (#{linea.id_jugador1.handicap}), 
+                                p #{linea.id_jugador2.nombre} #{linea.id_jugador2.apellido} (#{linea.id_jugador2.handicap}), 
+                                p #{linea.id_jugador3.nombre} #{linea.id_jugador3.apellido} (#{linea.id_jugador3.handicap}),  
+                                p #{linea.id_jugador4.nombre} #{linea.id_jugador4.apellido} (#{linea.id_jugador4.handicap})
+                        else
+                            option(value="#{linea._id}") 
+                                p #{linea.id_jugador1.nombre} #{linea.id_jugador1.apellido} (#{linea.id_jugador1.handicap}), 
+                                p #{linea.id_jugador2.nombre} #{linea.id_jugador2.apellido} (#{linea.id_jugador2.handicap}), 
+                                p #{linea.id_jugador3.nombre} #{linea.id_jugador3.apellido} (#{linea.id_jugador3.handicap}),  
+                                p #{linea.id_jugador4.nombre} #{linea.id_jugador4.apellido} (#{linea.id_jugador4.handicap}) 
+            div
+                label(for="horario") Horario
+                select(id="horario", name="horario", class="form-control")
+                    for horario in horarios
+                        if (horario._id+""==torneo.horario._id+"")
+                            option(selected value="#{horario._id}") #{horario.descripcion}
+                        else 
+                            option(value="#{horario._id}") #{horario.descripcion}
+            div
+                p
+            div(class="row top-space")
+                div(class="col-xs-12 col-sm-6")
+                    input(type="submit",value="Editar torneo",class="btn btn-info")

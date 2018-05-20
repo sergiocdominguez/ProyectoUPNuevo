@@ -1,0 +1,78 @@
+.right-space{
+    margin-right: 1em;
+    display: inline-block;
+}
+.left-space{
+    padding-left:3em;
+}
+.remove-float{
+    float: none;
+}
+.big-top-space{
+    margin-top: 80px;
+}
+.top-space{
+    margin-top: 1.5em;
+}
+
+.center-block{
+    margin-left:auto;
+    margin-right:auto;
+}
+.large-padding{
+    padding: 10px 15px;
+}
+.black{
+    background-color: #222;
+}
+.darkblue{
+    background-color: darkblue;
+}
+.darkgreen{
+    background-color: darkgreen;
+}
+.white-text{
+    color: white;
+}
+nav{
+    text-align: right;
+}
+nav li{
+    display: inline-block;
+    margin-right: 1em;
+    font-size: .8em;
+}
+nav li a{
+    color: white;
+}
+nav li a:hover{
+    color: white;
+}
+.white{
+    background: white;
+}
+.border{
+    border: solid 1px #eee;
+}
+.tr:nth-of-type(odd){
+    background-color: #eee;
+}
+.text-title{
+    font-size: 1em;
+}
+form.link{
+    display: inline-block;
+}
+form.link input[type="submit"]{
+
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    color: red;
+}
+form.link input:hover {
+    text-decoration: underline;
+}
+.text-center{
+    text-align: center;
+}

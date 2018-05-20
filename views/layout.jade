@@ -1,0 +1,23 @@
+doctype html
+html(lang="es")
+    head
+        title Arquitectura WEB - TP UP
+        meta(charset="utf-8")
+        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet")
+        link(href="/public/css/app.css" rel="stylesheet")
+    body
+        nav(class="large-padding darkgreen white-text")
+            ul
+                li 
+                    a(href="/") Inicio
+                li 
+                    a(href="/api/jugadores") Jugadores
+                li 
+                    a(href="/api/campos") Campos
+                li 
+                    a(href="/api/lineas") Lineas
+                li 
+                    a(href="/api/torneos") Torneos
+                li 
+                    a(href="/api/horarios") Horarios
+        block contenido
