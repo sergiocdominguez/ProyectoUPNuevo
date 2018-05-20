@@ -1,10 +1,14 @@
 doctype html
 html(lang="es")
     head
+        //link(href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet")
         title Arquitectura WEB - TP UP
         meta(charset="utf-8")
-        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet")
+
+        meta(name="viewport",content="width=device-width, initial-scale=1")
         link(href="/public/css/app.css" rel="stylesheet")
+        link(href="/public/css/bootstrap.min.css" rel="stylesheet")
+
     body
         nav(class="large-padding darkgreen white-text")
             ul
@@ -20,4 +24,7 @@ html(lang="es")
                     a(href="/api/torneos") Torneos
                 li 
                     a(href="/api/horarios") Horarios
+
+             
+                    
         block contenido
