@@ -25,17 +25,10 @@
       
     - Obtener Jugadores: GET /api/jugadores
     - Obtener Jugador: GET /api/jugadores/jugador_id
-    - Crear Jugador: POST /api/jugador/
+    - Crear Jugador: POST /api/jugadores/
       - BODY(nombre, apellido, edad, email, handicap)
     - Modificar Jugador: PUT /api/jugadores/jugador_id
       - BODY(nombre, apellido, edad, email, handicap)
-      
-    - Obtener Lineas: GET /api/lineas
-    - Obtener Linea: GET /api/lineas/linea_id
-    - Crear Lineas: POST /api/lineas/
-      - BODY(lista([jugadores_id]))
-    - Modificar Lineas: PUT /api/lineas/linea_id
-      - BODY(lista([jugadores_id]))
       
     - Obtener Torneos: /api/torneos
     - Obtener Torneo: /api/torneos/torneo_id
